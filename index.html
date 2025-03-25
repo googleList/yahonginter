@@ -80,7 +80,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="https://t.me/yahonginter" class="link btn btn-sm btn-primary hover:bg-dark hover:border-dark fw-medium rounded-1 kf">
+                            <a target="_blank" rel="noopener" href="https://t.me/yahonginter" class="link btn btn-sm btn-primary hover:bg-dark hover:border-dark fw-medium rounded-1 kf">
                                 立即咨询
                             </a>
                         </li>
@@ -117,7 +117,7 @@
                         我们专注于<span class="text-success"> 谷歌 FB </span>投放策略，助您实现高效转化与精准曝光。量身定制广告方案，让您的品牌脱颖而出！
                     </p>
                     <div class="d-flex align-items-center gap-6 flex-wrap" data-sal="fade" data-sal-duration="500" data-sal-delay="200" data-sal-easing="ease-in-out-sine">
-                        <a href="https://t.me/yahonginter" class="btn btn-light btn-arrow btn-lg fs-14 fw-semibold rounded transition kf">
+                        <a href="https://t.me/yahonginter" target="_blank" rel="noopener" class="btn btn-light btn-arrow btn-lg fs-14 fw-semibold rounded transition kf">
                             <span class="btn-arrow__text">
                                 立即咨询
                                 <span class="btn-arrow__icon">
@@ -360,7 +360,7 @@
                                 <div class="col-md-8">
                                     <h6> 售后在线支持</h6>
                                     <p>7*24 小时获取专业工程师的帮助，快速解决您的问题 </p>
-                                    <a href="https://t.me/yahonginter" class="btn btn-primary btn-arrow btn-arrow-sm fs-14 fw-medium rounded kf">
+                                    <a href="https://t.me/yahonginter" target="_blank" rel="noopener" class="btn btn-primary btn-arrow btn-arrow-sm fs-14 fw-medium rounded kf">
                                         <span class="btn-arrow__text">
                                             联系我们
                                             <span class="btn-arrow__icon">
@@ -500,7 +500,7 @@
                         </li>
                     </ul>
                     <div class="d-flex align-items-center gap-5 flex-wrap mt-10">
-                        <a href="https://t.me/yahonginter" class="btn btn-primary btn-arrow btn-arrow btn-arrow-md btn-lg fs-14 fw-medium rounded kf">
+                        <a href="https://t.me/yahonginter" target="_blank" rel="noopener" class="btn btn-primary btn-arrow btn-arrow btn-arrow-md btn-lg fs-14 fw-medium rounded kf">
                             <span class="btn-arrow__text">
                                 联系我们
                                 <span class="btn-arrow__icon">
@@ -652,7 +652,7 @@
                             <p class="mb-8" data-sal="slide-up" data-sal-duration="500" data-sal-delay="200" data-sal-easing="ease-in-out-sine">我们提供专业的广告投放服务，从开户到投放全程指导，让您的品牌快速获得曝光与转化。</p>
                         </div>
                         <div class="d-flex align-items-center justify-content-center gap-4 flex-wrap flex-md-nowrap" data-sal="slide-up" data-sal-duration="500" data-sal-delay="200" data-sal-easing="ease-in-out-sine">
-                            <a href="https://t.me/yahonginter" class="btn btn-primary btn-arrow btn-arrow-md btn-lg fs-14 fw-medium rounded kf">
+                            <a href="https://t.me/yahonginter" target="_blank" class="btn btn-primary btn-arrow btn-arrow-md btn-lg fs-14 fw-medium rounded kf">
                                 <span class="btn-arrow__text">
                                     在线客服
                                     <span class="btn-arrow__icon">
@@ -675,11 +675,11 @@
                 <div class="d-flex align-items-center justify-content-between flex-wrap gap-5 pt-5 border-top">
                     <p class="mb-0 fs-14">&copy; yahonginter. All rights reserved</p>
                     <div class="d-inline-flex align-items-center justify-content-center gap-2">
-                        <a href="#" class="align-items-center justify-content-center  ">
-                           111111111111
+                        <a href="privacy.html" class="align-items-center justify-content-center  ">
+                            隐私条款
                         </a>
-                        <a href="#" class="d-inline-flex align-items-center justify-content-center ">
-                            222222222222
+                        <a href="service.html" class="d-inline-flex align-items-center justify-content-center ">
+                            服务条款
                         </a> 
                     </div>
                 </div>
@@ -736,13 +736,15 @@
             }
         });
 
-        // 检测开发者工具是否打开
-        let devtools = function() {};
-        devtools.toString = function() {
-            window.location.href = "about:blank";
+        // 检测开发者工具是否打开（仅在生产环境生效）
+        if (window.location.protocol !== 'file:') {
+            let devtools = function() {};
+            devtools.toString = function() {
+                console.warn('开发者工具已打开');
+            }
+            console.log(devtools);
+            console.clear();
         }
-        console.log(devtools);
-        console.clear();
     </script>
 </body>
 
